@@ -51,7 +51,7 @@ INFO:     Started reloader process [PID]
 INFO:     Started server process [PID]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-```bash
+```
 
 this means your FastAPI service is running on http://localhost:8000
 

@@ -58,16 +58,42 @@ this means your FastAPI service is running on http://localhost:8000
 
 ## API Usage
 
-### Process Files Endpoint
+你可以通过以下两种主要方式测试 `/process` 接口：
 
-**POST** `/process`
+### a. 使用 FastAPI 自动生成的 Swagger UI (推荐)
+1. 打开你的浏览器，访问：http://localhost:8000/docs
+2. 你将看到 FastAPI 自动生成的交互式 API 文档 (Swagger UI)。
+3. 找到 /process 端点，点击展开。
+4. 点击 "Try it out" 按钮。
+5. 你将看到 pdf_file 和 json_file 的文件上传字段。
+6. 准备测试文件:
+  - PDF 文件: 准备一个课程内容的 PDF 文件。你可以使用任何 PDF 文件进行测试。
+  - JSON 文件: 使用项目根目录下的 examples/example_knowledge_structure.json 作为你的知识结构模板。你可以根据需要修改它。
+7. 点击 pdf_file 和 json_file 字段旁边的 "Choose File" 按钮，上传你准备好的 PDF 和 JSON 文件。
+8. 点击 "Execute" 按钮。
+9. 你将在 "Responses" 部分看到 API 的响应，包括状态码、响应体 (JSON 格式的提取结果) 和响应头。
 
-Upload a course PDF and knowledge structure JSON to extract structured knowledge points.
+### b. 使用 curl 命令 (命令行测试)
+如果你更喜欢在命令行中测试，可以使用 curl。你需要准备好 PDF 和 JSON 文件。
 
-**Request:**
-- Content-Type: `multipart/form-data`
-- `pdf_file`: Course content in PDF format
-- `json_file`: Knowledge structure template in JSON format
+假设你的 PDF 文件名为 course.pdf，JSON 文件名为 structure.json，并且它们都在你运行 curl 命令的当前目录下。
+
+```bash
+curl -X POST "http://localhost:8000/process" \
+  -H "accept: application/json" \
+  -H "Content-Type: multipart/form-data" \
+  -F "pdf_file=@course.pdf;type=application/pdf" \
+  -F "json_file=@structure.json;type=application/json"
+```
+
+- -X POST: 指定 HTTP 方法为 POST。
+- "http://localhost:8000/process": API 端点 URL。
+- -H "accept: application/json": 告诉服务器你期望 JSON 格式的响应。
+- -H "Content-Type: multipart/form-data": 指定请求体类型为 multipart/form-data，因为是文件上传。
+- -F "pdf_file=@course.pdf;type=application/pdf": 上传名为 course.pdf 的文件作为 pdf_file 字段，并指定其 MIME 类型。
+- -F "json_file=@structure.json;type=application/json": 上传名为 structure.json 的文件作为 json_file 字段，并指定其 MIME 类型。
+
+执行此命令后，你将在命令行中看到返回的 JSON 响应。
 
 **Response:**
 ```json
@@ -78,29 +104,6 @@ Upload a course PDF and knowledge structure JSON to extract structured knowledge
     // Structured knowledge points following input JSON format
   },
   "processed_at": "2025-01-11T10:30:00"
-}
-```
-
-### Example JSON Structure
-
-```json
-{
-  "course_title": "",
-  "topics": [
-    {
-      "topic_name": "",
-      "concepts": [
-        {
-          "concept_name": "",
-          "definition": "",
-          "examples": [],
-          "key_points": []
-        }
-      ]
-    }
-  ],
-  "learning_objectives": [],
-  "summary": ""
 }
 ```
 

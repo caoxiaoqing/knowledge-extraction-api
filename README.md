@@ -1,4 +1,4 @@
-# LangChain PDF Knowledge Extraction API
+# Knowledge Extraction API
 
 A comprehensive server application that extracts structured knowledge points from course PDF files using LangChain and large language models.
 

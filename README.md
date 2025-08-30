@@ -45,7 +45,7 @@ uvicorn main:app --reload
 
 if everything goes well, you will see
 ```bash
-INFO:     Will watch for changes in these directories: ['/path/to/your/langchain-pdf-processor']
+INFO:     Will watch for changes in these directories: ['/path/to/your/knowledge-point-extraction-system-backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process [PID]
 INFO:     Started server process [PID]

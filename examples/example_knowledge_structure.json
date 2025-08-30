@@ -1,0 +1,28 @@
+{
+  "course_title": "",
+  "course_description": "",
+  "topics": [
+    {
+      "topic_name": "",
+      "topic_description": "",
+      "concepts": [
+        {
+          "concept_name": "",
+          "definition": "",
+          "explanation": "",
+          "examples": [],
+          "key_points": [],
+          "related_concepts": []
+        }
+      ],
+      "practical_applications": [],
+      "common_misconceptions": []
+    }
+  ],
+  "learning_objectives": [],
+  "prerequisites": [],
+  "key_takeaways": [],
+  "summary": "",
+  "difficulty_level": "",
+  "estimated_study_time": ""
+}

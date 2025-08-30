@@ -43,6 +43,19 @@ cp .env.example .env
 uvicorn main:app --reload
 ```
 
+if everything goes well, you will see
+```bash
+INFO:     Will watch for changes in these directories: ['/path/to/your/langchain-pdf-processor']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [PID]
+INFO:     Started server process [PID]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```bash
+
+this means your FastAPI service is running on http://localhost:8000
+
+
 ## API Usage
 
 ### Process Files Endpoint

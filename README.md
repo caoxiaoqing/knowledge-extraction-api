@@ -24,7 +24,7 @@ A comprehensive server application that extracts structured knowledge points fro
 
 1. Clone the repository and navigate to the project directory:
 ```bash
-cd langchain-pdf-processor
+cd knowledge-point-extraction-system-backend
 ```
 
 2. Install dependencies:

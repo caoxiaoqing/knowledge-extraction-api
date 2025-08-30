@@ -24,7 +24,7 @@ A comprehensive server application that extracts structured knowledge points fro
 
 1. Clone the repository and navigate to the project directory:
 ```bash
-cd knowledge-point-extraction-system-backend
+cd knowledge-extraction-api
 ```
 
 2. Install dependencies:
@@ -45,7 +45,7 @@ uvicorn main:app --reload
 
 if everything goes well, you will see
 ```bash
-INFO:     Will watch for changes in these directories: ['/path/to/your/knowledge-point-extraction-system-backend']
+INFO:     Will watch for changes in these directories: ['/path/to/your/knowledge-extraction-api']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process [PID]
 INFO:     Started server process [PID]
